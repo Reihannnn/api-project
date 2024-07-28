@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/css/homepage.css" />
+    <title>HomePage</title>
+  </head>
+  <body>
+    <header class="header-section">
+      <nav class="navbar">
+        <div class="judul-in-navbar">AR<span>News</span></div>
+      </nav>
+      <nav class="navbar2">
+        <div>
+          <ul>
+            <li>bitcoin</li>
+            <li>bussines</li>
+            <li>sport</li>
+            <li>tech</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- papan informasi utama -->
+    <h1 class="hot-news">Hot News</h1>
+    <section class="hotNews-information">
+      <% if (locals.contentEverythingNews){%>
+      <div>
+        <img
+          src="<%= contentEverythingNews.urlToImage%>"
+          alt="gambar-berita"
+          class="img-hotNews-information"
+        />
+        <h1 class="title-hotNews-information">
+          <%= contentEverythingNews.title%>
+        </h1>
+        <p class="author-hotNews">
+          author : <%= contentEverythingNews.author%>
+        </p>
+        <p class="description-hotNews-information">
+          <%=contentEverythingNews.description%>
+        </p>
+      </div>
+      <div class="RMbutton">
+        <a href="<%=contentEverythingNews.url%>"
+          ><button class="readmore-btn">Read More</button></a
+        >
+      </div>
+    </section>
+    <%}%>
+
+    <section class="article-section">
+      <% if (locals.contentEverythingNews2){%>
+        <div class="article-left">
+          <a href="<%= contentEverythingNews2.url%>">
+          <img
+            src="<%=contentEverythingNews2.urlToImage%>"
+            alt=""
+            class="image-article"
+          />
+          <div class="article-left-information">
+            <h3><%= contentEverythingNews2.title%></h3>
+            <p class="author-article">
+              author : <%= contentEverythingNews2.author%>
+            </p>
+            <p> <%= contentEverythingNews2.publishedAt.slice(0,10)%> </p>
+            <p class="article-description"><%= contentEverythingNews2.description%></p>
+          </div>
+        </div>
+      </a>
+      <%}%>
+      
+      <div class="article-right">
+          <%if(locals.contentTopHeadlines){%>
+          <%if(locals.mathRandom){%>
+            <h1>indo news</h1>
+            <% for (let i = mathRandom ;i <= mathRandom+3 ;i++){%>
+            <article class="article-item">
+              <h3><%= contentTopHeadlines[i].title%></h3>
+              <p class="author-article">author : <%= contentTopHeadlines[i].author%></p>
+              <p class="article-description"> <%= contentTopHeadlines[i].publishedAt.slice(0,10)%></p>
+              <p class="article-link"><a href="<%= contentTopHeadlines[i].url%>">Read More => </a></p>
+            </article>
+            <%}%>
+          <%}%>
+        <%}%>
+      </div>
+    </section>
+
+    <section class="web-info">
+      <article class="web-info-image">
+        <div>
+          <img src="/asset/image/ARNews2.png" alt="">
+        </div>
+      </article>
+      <article class="web-info-text">
+        <div class="web-info-text-important">
+          <div class="judul-in-navbar web-info-text-judul">AR<span>News</span></div>
+          <p class="web-info-text-author">author : Reihan Achmad Susilo</p>
+          <img src="/asset/image/profile.jpg" alt="" class="profile-foto">
+        </div>
+        <p class="web-info-text-message">Selamat datang di ARNews, sumber informasi terpercaya Anda untuk berita terbaru dan terkini. Kami menggunakan berbagai API, termasuk News API, untuk menyajikan berita dari seluruh dunia secara real-time. Dengan ARNews, Anda akan selalu mendapatkan update terbaru dari berbagai kategori seperti politik, teknologi, bisnis, olahraga, hiburan, dan banyak lagi. Nikmati kemudahan akses berita yang cepat, akurat, dan selalu up-to-date dengan ARNews.
+
+        </p>
+        <p style="margin-top: 1rem;">techStack : </p>
+        <div class="tech-stack">
+          <img src="https://i.pinimg.com/236x/0e/4f/dc/0e4fdce8ac22e09688c580e5bc4dcd7d.jpg" alt="" class="techstack-img">
+          <img src="https://i.pinimg.com/236x/bc/c9/fc/bcc9fce91549fb9f1295e6e4ee84d66e.jpg" alt="" class="techstack-img">
+          <img src="https://i.pinimg.com/236x/ce/45/5f/ce455f4e7d741fb85eb763cbbdf9e43f.jpg" alt="" class="techstack-img">
+          <img src="https://i.pinimg.com/236x/ee/b3/5d/eeb35df1a6739f4cea43ed1cba70bc25.jpg" alt="" class="techstack-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZzumLtEotFjAZa3IGelehwukkRBEVBxgpqg&s" alt="" class="techstack-img">
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
