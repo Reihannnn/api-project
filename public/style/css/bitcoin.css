@@ -1,0 +1,56 @@
+:root{
+  --main_Color : #3FA2F6;
+  --secondary_Color: #0F67B1;
+  --side_Color : #96C9F4;
+}
+
+.bitcoin-news{
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.bitcoin-news-section{
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.bitcoin-news-item{
+  width: 29%;
+  padding: 1rem;
+  background-color: var(--main_Color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0.5rem 0.5rem 0.8rem 0.2rem  rgb(200, 200, 200);
+  border-radius: 0.75rem;
+} 
+
+.tech-news-judul{
+  font-size: 1.5rem;
+}
+
+.tech-news-author{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tech-news-author span{
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.tech-news-link{
+  color: white;
+}
+
+.link{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

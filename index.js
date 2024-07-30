@@ -40,8 +40,8 @@ app.get("/", async (req, res) => {
   const randomResultEverything2 = getRandomIndex(resultEverything.articles);
 
   // variable min n max
-  const max =  resultTopHeadlines.articles.length - 4 
-  const min =  0
+  const max =  resultTopHeadlines.articles.length - 5 
+  const min =  1
 
   // variable rumus mathrandom 
   const mathRandom = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -56,6 +56,67 @@ app.get("/", async (req, res) => {
     mathRandom : mathRandom
   });
 });
+
+app.get("/tech-news", async(req ,res) => {
+  const responseTopHeadlines = await axios.get(url + "top-headlines/", {
+    params: {
+      category: "technology",
+      country : "us",
+      apiKey: myApiKey,
+    },
+  });
+
+  const result = responseTopHeadlines.data
+  console.log(result.articles)
+
+  res.render("bitcoin.ejs", {content : result.articles})
+})
+
+app.get("/business-news" ,async (req,res) =>{
+  const responseTopHeadlines = await axios.get(url + "top-headlines/", {
+    params: {
+      category: "business",
+      country : "us",
+      apiKey: myApiKey,
+    },
+  });
+
+  const result = responseTopHeadlines.data
+  console.log(result.articles)
+
+  res.render("business.ejs", {content : result.articles})
+})
+
+
+app.get("/sport-news" ,async (req,res) =>{
+  const responseTopHeadlines = await axios.get(url + "top-headlines/", {
+    params: {
+      category: "sport",
+      country : "id",
+      apiKey: myApiKey,
+    },
+  });
+
+  const result = responseTopHeadlines.data
+  console.log(result.articles)
+
+  res.render("sport.ejs", {content : result.articles})
+})
+
+app.get("/health-news" ,async (req,res) =>{
+  const responseTopHeadlines = await axios.get(url + "top-headlines/", {
+    params: {
+      category: "health",
+      country : "us",
+      apiKey: myApiKey,
+    },
+  });
+
+  const result = responseTopHeadlines.data
+  console.log(result.articles)
+
+  res.render("health.ejs", {content : result.articles})
+})
 
 app.listen(port, () => {
   try {

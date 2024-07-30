@@ -28,7 +28,7 @@
   margin-top: 1rem;
 }
 
-.judul-in-navbar , .judul-in-navbar:hover{
+.judul-in-navbar , .judul-in-navbar{
   font-size: 2.8rem;
   font-weight: 900;
   color: var(--main_Color);
@@ -123,10 +123,10 @@ img{
   font-weight: bold;
   border-radius: 8px;
   margin-top: 1.5rem;
-}
-
-.readmore-btn:hover{
-  cursor: pointer;
+} 
+ 
+.readmore-btn:hover{ 
+  cursor: pointer; 
 }
 
 .article-section{
@@ -153,7 +153,7 @@ img{
 
 .article-right{
   width: 120%;
-  height: 550px;
+  height: 27%;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;

@@ -1,0 +1,27 @@
+
+<%- include("head")%>
+<title>Bitcoin-news</title>
+
+<body>
+<%- include ("header")%>
+
+<h1 class="bitcoin-news">Health news</h1>
+<section class="bitcoin-news-section"> 
+  <% if (locals.content){%>
+    <% for (let i = 0 ;i < 20;i++ ){%>
+    <article class="bitcoin-news-item">
+      <div class="tech-noDate">
+        <h2 class="tech-news-judul"><%= content[i].title%></h2>
+        <p class="tech-news-author">author : <span><%= content[i].author%></span></p>
+      </div>
+      <div class="link">
+        <p class="tech-news-date"><%= content[i].publishedAt.slice(0,10)%></p>
+        <a href="<%= content[i].url%>" class="tech-news-link"><p>read more =></p></a>
+
+      </div>
+    </article>
+    <% }%>
+    <% }%>
+</section>
+</body>
+</html>
